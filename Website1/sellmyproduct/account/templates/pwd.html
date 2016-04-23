@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+
+<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-in-form">
+						<div class="sign-in-form-top">
+							<h1>Password Sucessfully changed!!!</h1>
+							Please <a href ="{% url 'account:loginme' %}" > Login</a> to continue
+						</div>
+					</div>
+				</div>
+</div>
+{% endblock main_content %}

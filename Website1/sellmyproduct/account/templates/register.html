@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block main_content %}
+	<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-up">
+							<form action="{% url 'account:registerSub' %}"  method="post">
+							{% csrf_token %}
+						<h1>Create an account</h1>
+					
+							<font color="green">{{ msg }}</font>
+
+						<p class="creating">Having hands on experience in creating innovative designs,I do offer design 
+							solutions which harness.</p>
+						<h2>Personal Information </h2>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>First Name :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									{{ form.first_name }}
+									<font color="red">{{ form.first_name.errors }}</font>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Last Name :</h4>
+							</div>
+							<div class="sign-up2">
+							
+									{{ form.last_name }}
+								<font color="red">{{ form.last_name.errors }}</font>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Username :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									{{ form.username }}
+								<font color="red">{{ form.username.errors }}</font>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Email Address* :</h4>
+							</div>
+							<div class="sign-up2">
+								
+									{{ form.email }}
+								<font color="red">{{ form.email.errors }}</font>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="sign-u">
+							<div class="sign-up1">
+								<h4>Password* :</h4>
+							</div>
+							<div class="sign-up2">
+							
+									{{ form.password }}
+							<font color="red">{{ form.password.errors }}</font>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					
+						<div class="sub_home">
+							<div class="sub_home_left">
+								
+									<input type="submit" value="Create">
+								
+							</div>
+							<div class="sub_home_right">
+								<p>Go Back to <a href="/">Home</a></p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						</form>
+					</div>
+				</div>
+			</div>
+{% endblock main_content %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+
+
+
+
+
+<div id="page-wrapper" class="sign-in-wrapper">
+				<div class="graphs">
+					<div class="sign-in-form">
+						<div class="sign-in-form-top">
+							<h1>Log in</h1>
+						</div>
+						<div class="signin">
+							<div class="signin-rit">
+								<span class="checkbox1">
+									
+								</span>
+								<p><a href=" {% url 'account:forgetpass' %}   ">Forgot Password</a> </p>
+								<div class="clearfix"> </div>
+							</div>
+						
+							<div class="log-input">
+							<form action ="{% url 'account:loginSub' %}" method="POST">
+							{% csrf_token %}
+								Enter Username:
+									<div class="log-input-left">
+											{{ form.username }}
+										<font color="red">{{ form.username.errors }}</font>
+
+									</div>
+									<span class="checkbox2">
+										 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
+									</span>
+									<div class="clearfix"> </div>
+								</div>
+								<div class="log-input">
+								Enter Password :
+									<div class="log-input-left">
+									   	{{ form.password }}
+										<font color="red">{{ form.password.errors }}</font>
+									</div>
+									<span class="checkbox2">
+										 <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i> </i></label>
+									</span>
+									<div class="clearfix"> </div>
+								</div>
+								<input type="submit" value="Log in">
+							</form>
+				 
+						</div>
+						<div class="new_people">
+							<h2>For New People</h2>
+							<p>Having hands on experience in creating innovative designs,I do offer design 
+								solutions which harness.</p>
+							<a href="{% url 'account:registerme' %}">Register Now!</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock main_content %}

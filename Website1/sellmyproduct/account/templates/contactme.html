@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block main_content %}
+<div class="contact main-grid-border">
+		<div class="container">
+			<h2 class="head text-center">Contact Us</h2>
+			<font color="green">{{ msg }}</font>
+			<section id="hire">    
+				<form action ="{% url 'account:contactsub' %}" method ="POST">
+				{% csrf_token %}
+					  <div class="field name-box">
+							{{ form.name }}
+							<label for="name">Name</label>
+							<span class="ss-icon">check</span>
+							<font color="red">{{ form.name.errors }}</font>
+					  </div>
+					  
+					  <div class="field email-box">
+							{{ form.email}}
+							<label for="email">Email</label>
+							<span class="ss-icon">check</span>
+						<font color="red">{{ form.email.errors }}</font>
+
+					  </div>
+					  
+					  
+
+					  <div class="field msg-box">
+							{{ form.Query}}
+							<label for="Query">Your Query</label>
+							<span class="ss-icon">check</span>
+						<font color="red">{{ form.Query.errors }}</font>
+
+					  </div>
+					  <div>
+					      <input type='submit' value='Submit'/>
+					  </div>
+
+					 
+			  </form>
+{% endblock main_content %}
